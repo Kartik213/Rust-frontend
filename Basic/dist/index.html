@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Yew Frontend</title>
+    
+<script type="module">
+import init, * as bindings from '/RustFrontEnd-81b4b4099860adaa.js';
+const wasm = await init({ module_or_path: '/RustFrontEnd-81b4b4099860adaa_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script>
+  <link rel="modulepreload" href="/RustFrontEnd-81b4b4099860adaa.js" crossorigin="anonymous" integrity="sha384-KMPg+HstJUsjrLv8bstlWwbY9OE6eZ+oLky6NpA6y05L3QLsvttGx/hnqo/KQa1x"><link rel="preload" href="/RustFrontEnd-81b4b4099860adaa_bg.wasm" crossorigin="anonymous" integrity="sha384-sWAFCc04koAtt2SswAvlBm77BKQkIHicrKlL7d+lpccei9B+z6YSS27JbDWaVUut" as="fetch" type="application/wasm"></head>
+</html>
